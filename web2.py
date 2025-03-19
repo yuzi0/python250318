@@ -11,7 +11,7 @@ page = open("Chap09_test.html", "rt", encoding="utf-8").read()
 soup = BeautifulSoup(page, 'html.parser')
 
 # 태그는 삭제하고 내부 컨텐츠만 가져오기 : text 속성
-f = open("Chap09_test.html", "wt", encoding="utf-8")
+f = open("Chap09_test.txt", "wt", encoding="utf-8")
 for tag in soup.find_all("p"):
     title = tag.text.strip()
     titme = title.replace("\n", "")
