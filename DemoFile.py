@@ -9,3 +9,4 @@ f = open("demo.txt", "rt", encoding="utf-8")
 text = f.read()
 f.close()
 print(text)
+
