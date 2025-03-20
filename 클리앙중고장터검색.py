@@ -9,6 +9,9 @@ import re
 #User-Agent를 조작하는 경우(아이폰에서 사용하는 사파리 브라우져의 헤더) 
 hdr = {'User-agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0 Mobile/14E5239e Safari/602.1'}
 
+# 파일에 쓰기
+f = open('F:\\교육\\20250317 Python핵심과정\\work\\client.txt', 'wt', encoding='utf-8')
+
 for n in range(0,10): # 1페이지부터 10페이지까지의 게시글 탐색
         #클리앙의 중고장터 주소 
         data ='https://www.clien.net/service/board/sold?&od=T31&po=' + str(n)
@@ -26,10 +29,13 @@ for n in range(0,10): # 1페이지부터 10페이지까지의 게시글 탐색
         for item in list:
                 try:
                         title = item.text.strip() #공백 제거해서 출력
-                        print(title)
-                        # if (re.search('아이폰', title)):
-                        #         print(title.strip())
-                        #         print('https://www.clien.net'  + item['href'])
+                        # print(title)
+                        if (re.search('아이패드', title)):
+                                print(title)
+                                f.write(title + '\n')
+                                # print('https://www.clien.net'  + item['href'])
                 except:
                         pass
         
+# 파일 닫기
+f.close()
