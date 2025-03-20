@@ -22,7 +22,7 @@ class DemoForm(QMainWindow, form_class):
     # 슬롯 메서드 추가
     def firstClick(self):
         hdr = {'User-agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0 Mobile/14E5239e Safari/602.1'}
-        f = open('F:\\교육\\20250317 Python핵심과정\\work\\client.txt', 'wt', encoding='utf-8')
+        f = open('client.txt', 'wt', encoding='utf-8')
         for n in range(0,10): # 1페이지부터 10페이지까지의 게시글 탐색
                 #클리앙의 중고장터 주소 
                 data ='https://www.clien.net/service/board/sold?&od=T31&po=' + str(n)
