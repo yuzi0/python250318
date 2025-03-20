@@ -9,17 +9,22 @@ import time
 driver = webdriver.Chrome()
 driver.get('https://nid.naver.com/nidlogin.login')
 
+# <input type="text" id="id" name="id" accesskey="L" maxlength="41" autocapitalize="none" value="" title="아이디" class="input_id" aria-label="아이디 또는 전화번호">
+# <input type="password" id="pw" name="pw" title="비밀번호" class="input_pw" maxlength="16" aria-label="비밀번호">
+# <button type="submit" class="btn_login off next_step nlog-click" id="log.login">
+#     <span class="btn_text" id="log.login.text">로그인</span>
+#     <span class="blind" id="log.login.blind">로그인 버튼</span>
+# </button>
+
 # 로그인 창에 아이디/비밀번호 입력
 loginID = "kim"
 clipboard.copy(loginID)
 #mac은 COMMAND, window는 CONTROL
-driver.find_element(By.XPATH,'//*[@id="id"]').send_keys(
-    Keys.CONTROL, 'v')
+driver.find_element(By.XPATH,'//*[@id="id"]').send_keys(Keys.CONTROL, 'v')
 
 loginPW = "1234"
 clipboard.copy(loginPW)
-driver.find_element(By.XPATH,'//*[@id="pw"]').send_keys(
-    Keys.CONTROL, 'v')
+driver.find_element(By.XPATH,'//*[@id="pw"]').send_keys(Keys.CONTROL, 'v')
 time.sleep(1)
 
 # 로그인 버튼 클릭
